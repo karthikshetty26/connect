@@ -1,58 +1,76 @@
 /* NAVBAR COMPONENT STYLES */
 .nav {
     position: fixed;
-    right: 20px;
-    top: 20px;
+    right: 30px;
+    top: 30px;
     z-index: 999;
-    display: flex;
-    align-items: center;
-    gap: 15px;
 }
 
-/* Theme toggle & Copy container */
-.theme_selection,
-.copy_site {
-    width: 28px;
-    height: 28px;
-    padding: 6px;
+/* Glassmorphic Pill Container */
+.nav_pill {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(0, 0, 0, 0.08);
+    border-radius: 100px;
+    box-shadow: none;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .nav_pill {
+    background: rgba(15, 15, 15, 0.7);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+}
+
+/* Nav Buttons */
+.nav_btn {
+    width: 26px;
+    height: 26px;
+    padding: 5px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: var(--overlay);
-    transition: all 350ms ease-in-out;
+    background-color: transparent;
+    color: var(--foreground);
+    opacity: 0.6;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Theme toggle container hover effect */
-.theme_selection:hover svg {
-    rotate: -90deg;
+.nav_btn:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--cat-color);
+    transform: scale(1.1);
 }
 
-/* Copy container hover effect */
-.copy_site:hover svg {
-    rotate: -180deg;
+[data-theme="dark"] .nav_btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Icon */
-.theme_selection svg,
-.copy_site svg {
+.nav_btn svg {
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-    color: var(--foreground);
-    transition: all 350ms ease-in-out;
 }
 
-/* Theme toggle & Copy container hover effect to SVG*/
-.theme_selection:hover svg,
-.copy_site:hover svg {
-    opacity: 0.8;
-    color: var(--cat-color);
+/* Subtle Divider */
+.divider {
+    width: 1px;
+    height: 14px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Toast message */
+[data-theme="dark"] .divider {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Toast message */
 .toast_div {
     position: fixed;
@@ -63,25 +81,41 @@
     height: 0;
     padding: 0 20px;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .toast_div.show {
-    bottom: 30px;
-    height: fit-content;
+    bottom: 40px;
     opacity: 1;
 }
 
 .toast_messages {
-    width: 100%;
-    max-width: 500px;
-    padding: 12px 15px;
+    width: fit-content;
+    max-width: 90%;
+    padding: 12px 24px;
     margin: auto;
     text-align: center;
-    font-size: 13px;
-    letter-spacing: 1px;
-    border-radius: 1rem;
-    background-color: var(--background);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    background: var(--background);
     color: var(--foreground);
-    border: 1px solid var(--overlay);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .toast_messages {
+    background: #1a1a1a;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 600px) {
+    .nav {
+        right: 20px;
+        top: 20px;
+    }
 }
