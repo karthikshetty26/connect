@@ -10,7 +10,7 @@ const SOCIAL_LINKS = [
   { href: 'https://hashnode.com/@Karthikshetty', name: 'Hashnode', type: 'Hashnode', description: 'Technical tutorials and software deep-dives.', linkText: 'Read Blog' },
   { href: 'https://medium.com/@Karthikshetty26', name: 'Medium', type: 'Medium', description: 'Essays on design, tech, and productivity.', linkText: 'Read Articles' },
   { href: 'https://www.youtube.com/@karthiksinfo2020', name: 'YouTube', type: 'YouTube', description: 'Video logs and development showcases.', linkText: 'Subscribe' },
-  { href: 'https://www.instagram.com/karthik.shetty.26/', name: 'Instagram', type: 'Instagram', description: 'Visual journey and snippets of life.', linkText: 'Follow' },
+  { href: 'https://www.instagram.com/karthikshettysocial/', name: 'Instagram', type: 'Instagram', description: 'Visual journey and snippets of life.', linkText: 'Follow' },
   { href: 'mailto:karthikkanyana26@gmail.com', name: 'Gmail', type: 'Mail', description: 'Inquiries and collaboration requests.', linkText: 'Send Email', isHighlight: true },
 ];
 
