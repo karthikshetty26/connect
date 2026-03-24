@@ -46,13 +46,8 @@
 
 .nav_btn:hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.05);
     color: var(--cat-color);
     transform: scale(1.1);
-}
-
-[data-theme="dark"] .nav_btn:hover {
-    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .nav_btn svg {
@@ -86,7 +81,7 @@
 }
 
 .toast_div.show {
-    bottom: 40px;
+    bottom: 70px;
     opacity: 1;
 }
 
