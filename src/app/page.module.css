@@ -4,7 +4,7 @@
   z-index: 1;
   width: 100%;
   height: fit-content;
-  padding-bottom: var(--space-section-bottom);
+  padding-bottom: var(--section-spacing-bottom);
   min-height: 100vh;
   margin: auto;
 }
@@ -13,7 +13,7 @@
 .section_bio {
   width: 100%;
   max-width: 1000px;
-  padding: var(--space-3xl) var(--space-md) var(--space-xl) var(--space-md);
+  padding: var(--space-4xl) var(--space-lg) var(--space-2xl) var(--space-lg);
   margin: auto;
   display: flex;
   justify-content: flex-start;
@@ -42,7 +42,7 @@
 
 /* Minimalistic bio description text */
 .bio_content .bio {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
   font-size: var(--font-md);
   font-weight: var(--font-weight-medium);
   line-height: 1.6;
@@ -54,7 +54,7 @@
 /* Responsive styles for tablets and small desktops */
 @media only screen and (max-width: 800px) {
   .section_bio {
-    padding: var(--space-2xl) var(--space-md) 1.875rem var(--space-md);
+    padding: var(--space-3xl) var(--space-lg) 1.875rem var(--space-lg);
   }
 
   .bio_content h1 {
@@ -64,14 +64,14 @@
 
   .bio_content .bio {
     font-size: var(--font-base);
-    margin-top: var(--space-md);
+    margin-top: var(--space-lg);
   }
 }
 
 /* Responsive styles for mobile devices */
 @media only screen and (max-width: 600px) {
   .section_bio {
-    padding: var(--space-2xl) var(--space-md) var(--space-md) var(--space-md);
+    padding: var(--space-3xl) var(--space-lg) var(--space-lg) var(--space-lg);
   }
 
   .bio_content h1 {
@@ -96,11 +96,11 @@
 .links {
   width: 100%;
   max-width: 1000px;
-  padding: var(--space-md);
+  padding: var(--space-lg);
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
 /* Individual social link card */
@@ -109,7 +109,7 @@
   overflow: hidden;
   height: auto;
   min-height: 220px;
-  padding: var(--space-lg);
+  padding: var(--space-xl);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -176,7 +176,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .link div.icon svg {
@@ -188,8 +188,8 @@
 /* Decorative grid for Portfolio */
 .decorative_grid {
   position: absolute;
-  top: var(--space-lg);
-  right: var(--space-lg);
+  top: var(--space-xl);
+  right: var(--space-xl);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xs);
@@ -221,7 +221,7 @@
   font-size: var(--font-sm);
   line-height: 1.5;
   color: var(--foreground-05);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
 /* Link text container at bottom */
@@ -255,7 +255,7 @@
 @media only screen and (max-width: 600px) {
   .links {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
+    gap: var(--space-lg);
   }
 
   .link {
@@ -264,7 +264,7 @@
   }
 
   .description {
-    margin-bottom: var(--space-md-sm);
+    margin-bottom: var(--space-md);
   }
 }
 
@@ -273,7 +273,7 @@
   width: 100%;
   display: block;
   position: absolute;
-  bottom: var(--space-xl);
+  bottom: var(--space-2xl);
   left: 0;
   font-size: var(--font-xs);
   text-align: center;
