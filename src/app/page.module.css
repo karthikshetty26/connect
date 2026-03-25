@@ -4,8 +4,7 @@
   z-index: 1;
   width: 100%;
   height: fit-content;
-  padding-bottom: 150px;
-  /* Space for copyright at bottom */
+  padding-bottom: var(--space-section-bottom);
   min-height: 100vh;
   margin: auto;
 }
@@ -14,7 +13,7 @@
 .section_bio {
   width: 100%;
   max-width: 1000px;
-  padding: 100px 20px 40px 20px;
+  padding: var(--space-3xl) var(--space-md) var(--space-xl) var(--space-md);
   margin: auto;
   display: flex;
   justify-content: flex-start;
@@ -34,7 +33,7 @@
 
 /* Bold name heading styling */
 .bio_content h1 {
-  font-size: 3.5rem;
+  font-size: var(--font-3xl);
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -1px;
@@ -43,8 +42,8 @@
 
 /* Minimalistic bio description text */
 .bio_content .bio {
-  margin-top: 24px;
-  font-size: 1.15rem;
+  margin-top: var(--space-lg);
+  font-size: var(--font-md);
   font-weight: 500;
   line-height: 1.6;
   color: var(--foreground-05);
@@ -54,16 +53,16 @@
 /* Responsive styles for tablets and small desktops */
 @media only screen and (max-width: 800px) {
   .section_bio {
-    padding: 80px 20px 30px 20px;
+    padding: var(--space-2xl) var(--space-md) 30px var(--space-md);
   }
 
   .bio_content h1 {
-    font-size: 2.8rem;
+    font-size: var(--font-2xl);
     letter-spacing: -1px;
   }
 
   .bio_content .bio {
-    font-size: 1rem;
+    font-size: var(--font-base);
     margin-top: 18px;
   }
 }
@@ -71,13 +70,11 @@
 /* Responsive styles for mobile devices */
 @media only screen and (max-width: 600px) {
   .section_bio {
-    padding: 80px 20px 20px 200px;
-    /* Offset for better centering feel on mobile */
-    padding-left: 20px;
+    padding: var(--space-2xl) var(--space-md) var(--space-md) var(--space-md);
   }
 
   .bio_content h1 {
-    font-size: 2.2rem;
+    font-size: var(--font-xl);
   }
 }
 
@@ -98,29 +95,29 @@
 .links {
   width: 100%;
   max-width: 1000px;
-  padding: 20px;
+  padding: var(--space-md);
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
 }
 
-/* Individual social link styling */
+/* Individual social link card */
 .link {
   position: relative;
   overflow: hidden;
   height: auto;
   min-height: 220px;
-  padding: 24px;
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   background-color: var(--background);
   color: var(--foreground);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 24px var(--color-shadow-sm);
   cursor: pointer;
   text-align: left;
   transition: all 300ms ease-in-out;
@@ -128,7 +125,7 @@
 
 .link:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 32px var(--color-shadow-md);
 }
 
 /* Special dark green styling for Gmail card */
@@ -139,7 +136,7 @@
 }
 
 .link_highlight .icon {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-icon-highlight-bg);
   color: #ffffff;
 }
 
@@ -153,9 +150,10 @@
   color: #ffffff !important;
 }
 
+/* Dark mode card border & shadow */
 [data-theme="dark"] .link {
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-border);
+  box-shadow: 0 4px 24px var(--color-shadow-sm);
 }
 
 /* Force white icon background in dark mode for highlighted state */
@@ -164,24 +162,21 @@
 }
 
 [data-theme="dark"] .link_highlight .icon svg {
-  color: #0c7028 !important;
-  /* Force original dark green for contrast on white box */
+  color: var(--green-primary) !important;
 }
 
 /* Icon container */
 .link div.icon {
   width: 44px;
   height: 44px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   background-color: var(--green-bg);
   color: var(--green-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-md);
 }
-
-/* Dark mode icon override now handled by --green-bg and --green-primary variables in [data-theme="dark"] */
 
 .link div.icon svg {
   width: 22px;
@@ -192,8 +187,8 @@
 /* Decorative grid for Portfolio */
 .decorative_grid {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: var(--space-lg);
+  right: var(--space-lg);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px;
@@ -203,7 +198,7 @@
   width: 14px;
   height: 14px;
   background-color: var(--overlay);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   opacity: 0.8;
 }
 
@@ -212,36 +207,33 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  /* Pushes bottom link down */
 }
 
 .title {
-  font-size: 1.15rem;
+  font-size: var(--font-md);
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: var(--space-sm);
   color: var(--foreground);
 }
 
 .description {
-  font-size: 0.85rem;
+  font-size: var(--font-sm);
   line-height: 1.5;
   color: var(--foreground-05);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-lg);
 }
 
 /* Link text container at bottom */
 .link_text_container {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
+  gap: var(--space-xs);
+  font-size: var(--font-sm);
   font-weight: 600;
   color: var(--green-primary);
   margin-top: auto;
   transition: gap 0.2s ease;
 }
-
-/* Dark mode link text color now handled by --green-primary variable in [data-theme="dark"] */
 
 .arrow {
   transition: transform 0.2s ease;
@@ -249,7 +241,6 @@
 
 .link:hover .link_text_container {
   gap: 10px;
-  /* Arrow moves right slightly on hover */
 }
 
 /* Adjust grid to two columns on medium screens */
@@ -266,10 +257,9 @@
     gap: 1.2rem;
   }
 
-  /* Slightly smaller font on mobile */
   .link {
     min-height: fit-content;
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
   }
 
   .description {
@@ -282,9 +272,9 @@
   width: 100%;
   display: block;
   position: absolute;
-  bottom: 40px;
+  bottom: var(--space-xl);
   left: 0;
-  font-size: 0.8rem;
+  font-size: var(--font-xs);
   text-align: center;
   opacity: 0.3;
   color: var(--foreground);

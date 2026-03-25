@@ -1,50 +1,143 @@
 /* ============================================================================
-   THEME VARIABLES
+   DESIGN SYSTEM — GLOBAL CSS VARIABLES
+   Single source of truth for all design tokens.
    ============================================================================ */
 
-/* Standard transition token — single source of truth for all theme animations */
 :root {
+  /* --------------------------------------------------------------------------
+     Transitions
+  -------------------------------------------------------------------------- */
   --theme-transition: 0.3s ease-in-out;
 
-  /* Background & text */
+  /* --------------------------------------------------------------------------
+     Colors — Base
+  -------------------------------------------------------------------------- */
   --background: #ffffff;
-  --background-dark: #000000;
-  --background-dark-text: #ffffff;
   --foreground: #363636;
   --foreground-05: #3636368f;
   --overlay: #ecf0f4;
 
-  /* Brand / accent */
+  /* Brand */
   --cat-color: #a4e84c;
-  --brand-primary: var(--cat-color); /* alias for Error page */
+  --brand-primary: var(--cat-color);
 
-  /* Green palette for icons and link text */
+  /* Green palette */
   --green-primary: #0c7028;
   --green-bg: #eaf5ec;
   --green-highlight-bg: #0c7028;
+
+  /* --------------------------------------------------------------------------
+     Colors — Semantic aliases (transparent / glass)
+     These replace raw rgba() literals throughout component files.
+  -------------------------------------------------------------------------- */
+
+  /* Borders */
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-subtle: rgba(0, 0, 0, 0.05);
+  --color-border-divider: rgba(0, 0, 0, 0.10);
+
+  /* Shadows */
+  --color-shadow-sm: rgba(0, 0, 0, 0.03);
+  --color-shadow-md: rgba(0, 0, 0, 0.08);
+  --color-shadow-lg: rgba(0, 0, 0, 0.15);
+  --color-shadow-xl: rgba(0, 0, 0, 0.40);
+
+  /* Glass / Frosted surfaces */
+  --color-glass-bg: rgba(255, 255, 255, 0.70);
+  --color-icon-highlight-bg: rgba(255, 255, 255, 0.20);
+
+  /* Solid surface alias (toast background, elevated cards) */
+  --color-surface-elevated: #ffffff;
+
+  /* --------------------------------------------------------------------------
+     Typography
+     Scale: xs → sm → base → md → lg → xl → 2xl → 3xl → hero
+  -------------------------------------------------------------------------- */
+  --font-xs: 0.80rem;
+  /* copyright, fine print  */
+  --font-sm: 0.85rem;
+  /* descriptions, captions */
+  --font-base: 1.00rem;
+  /* body text              */
+  --font-md: 1.15rem;
+  /* card titles, emphasis  */
+  --font-lg: 1.50rem;
+  /* error subheadings      */
+  --font-xl: 2.20rem;
+  /* mobile heading         */
+  --font-2xl: 2.80rem;
+  /* tablet heading         */
+  --font-3xl: 3.50rem;
+  /* desktop hero heading   */
+  --font-hero: 10rem;
+  /* 404 large number       */
+
+  /* --------------------------------------------------------------------------
+     Spacing
+     Named by size. Use these for margin / padding / gap.
+  -------------------------------------------------------------------------- */
+  --space-xs: 6px;
+  --space-sm: 8px;
+  --space-md: 20px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 80px;
+  --space-3xl: 100px;
+  --space-section-bottom: 150px;
+
+  /* --------------------------------------------------------------------------
+     Border Radius
+  -------------------------------------------------------------------------- */
+  --radius-sm: 2px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 100px;
 }
 
-/* Dark theme overrides */
+/* --------------------------------------------------------------------------
+   Dark Theme Overrides
+   All dark-mode changes live here. Components need zero [data-theme] overrides
+   for base colors — only for structural dark-only values (glass, surfaces).
+-------------------------------------------------------------------------- */
 [data-theme="dark"] {
   --background: #000000;
   --foreground: #C9C9C9;
   --foreground-05: #C9C9C98F;
   --overlay: #0f0f0f;
 
+  /* Green — bright brand green replaces dark forest green in dark mode */
   --green-primary: var(--cat-color);
   --green-bg: rgba(12, 112, 40, 0.25);
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-divider: rgba(255, 255, 255, 0.10);
+
+  /* Shadows */
+  --color-shadow-sm: rgba(0, 0, 0, 0.20);
+  --color-shadow-md: rgba(0, 0, 0, 0.20);
+  --color-shadow-lg: rgba(0, 0, 0, 0.40);
+  --color-shadow-xl: rgba(0, 0, 0, 0.40);
+
+  /* Glass */
+  --color-glass-bg: rgba(15, 15, 15, 0.70);
+
+  /* Surface */
+  --color-surface-elevated: #1a1a1a;
 }
 
 /* ============================================================================
    GLOBAL RESET & BASE STYLES
    ============================================================================ */
 
-/* Reset box model for all elements */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* Universal theme transition — applies to all color/background changes simultaneously */
+  /* Universal theme transition — all color/background changes animate together */
   transition:
     color var(--theme-transition),
     background-color var(--theme-transition),
@@ -62,32 +155,28 @@ body {
   background-color: var(--background);
 }
 
-
-/* Style for anchor elements */
 a {
-  /* Links inherit text color from parent */
   color: inherit;
-  /* Remove underline from links */
   text-decoration: none;
 }
 
-/* Custom Scrollbar for WebKit Browsers (Chrome, Edge, Safari) */
+/* ============================================================================
+   CUSTOM SCROLLBAR (WebKit)
+   ============================================================================ */
+
 ::-webkit-scrollbar {
   width: 4px;
 }
 
-/* Scrollbar Track */
 ::-webkit-scrollbar-track {
   background: var(--overlay);
 }
 
-/* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--foreground-05);
-  transition: background 0.3s ease-in-out;
+  transition: background var(--theme-transition);
 }
 
-/* Scrollbar Handle on Hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground-05);
+  background: var(--foreground);
 }
