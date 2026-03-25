@@ -1,6 +1,4 @@
-import Image from "next/image";
 import HOMECSS from "./page.module.css"; // CSS module for styling
-import ProfilePic from '@/assets/img/profile.jpg'; // Profile picture
 
 // Array of social media and contact links with metadata
 const SOCIAL_LINKS = [

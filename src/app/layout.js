@@ -1,6 +1,6 @@
 import "./globals.css";
 // Import the custom Navbar component
-import NavbarUi from '@/component/navbar_ui/navbar_ui'
+import NavbarUi from '@/components/navbar/navbar'
 import Script from "next/script";
 // Import Poppins font from Google Fonts using Next.js font optimization
 import { Poppins } from "next/font/google"
