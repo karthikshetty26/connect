@@ -39,7 +39,6 @@
   font-weight: 800;
   letter-spacing: -1px;
   color: var(--foreground);
-  transition: all 350ms ease-in-out;
 }
 
 /* Minimalistic bio description text */
@@ -50,7 +49,6 @@
   line-height: 1.6;
   color: var(--foreground-05);
   max-width: 650px;
-  transition: all 350ms ease-in-out;
 }
 
 /* Responsive styles for tablets and small desktops */
@@ -135,7 +133,7 @@
 
 /* Special dark green styling for Gmail card */
 .link_highlight {
-  background-color: #0c7028 !important;
+  background-color: var(--green-highlight-bg) !important;
   color: #ffffff;
   border: none;
 }
@@ -146,7 +144,7 @@
 }
 
 .link_highlight .icon svg {
-  color: #0c7028 !important;
+  color: var(--green-highlight-bg) !important;
 }
 
 .link_highlight .title,
@@ -160,26 +158,30 @@
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* Force white icon background in dark mode for highlighted state */
+[data-theme="dark"] .link_highlight .icon {
+  background-color: #ffffff !important;
+}
+
+[data-theme="dark"] .link_highlight .icon svg {
+  color: #0c7028 !important;
+  /* Force original dark green for contrast on white box */
+}
+
 /* Icon container */
 .link div.icon {
   width: 44px;
   height: 44px;
   border-radius: 8px;
-  background-color: #eaf5ec;
-  /* light green */
-  color: #0c7028;
-  /* dark green */
+  background-color: var(--green-bg);
+  color: var(--green-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  transition: all 350ms ease-in-out;
 }
 
-[data-theme="dark"] .link:not(.link_highlight) div.icon {
-  background-color: rgba(12, 112, 40, 0.25);
-  color: var(--cat-color);
-}
+/* Dark mode icon override now handled by --green-bg and --green-primary variables in [data-theme="dark"] */
 
 .link div.icon svg {
   width: 22px;
@@ -200,13 +202,9 @@
 .decorative_grid div {
   width: 14px;
   height: 14px;
-  background-color: #f2f2f2;
+  background-color: var(--overlay);
   border-radius: 2px;
   opacity: 0.8;
-}
-
-[data-theme="dark"] .decorative_grid div {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Content layout */
@@ -238,15 +236,12 @@
   gap: 6px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #0c7028;
-  /* green text */
+  color: var(--green-primary);
   margin-top: auto;
   transition: gap 0.2s ease;
 }
 
-[data-theme="dark"] .link:not(.link_highlight) .link_text_container {
-  color: var(--cat-color);
-}
+/* Dark mode link text color now handled by --green-primary variable in [data-theme="dark"] */
 
 .arrow {
   transition: transform 0.2s ease;

@@ -41,7 +41,8 @@
     background-color: transparent;
     color: var(--foreground);
     opacity: 0.6;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Hover-specific transforms still need explicit transition since transform isn't in global rule */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity var(--theme-transition);
 }
 
 .nav_btn:hover {
