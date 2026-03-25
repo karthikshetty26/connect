@@ -28,7 +28,7 @@
     transform: translate(-50%, -50%);
     font-size: 15rem;
     /* Larger than font-hero for full background look */
-    font-weight: 900;
+    font-weight: var(--font-weight-black);
     color: var(--foreground);
     opacity: 0.04;
     /* Very faint watermark */
@@ -47,7 +47,7 @@
 
 .title {
     font-size: var(--font-2xl);
-    font-weight: 800;
+    font-weight: var(--font-weight-extrabold);
     color: var(--foreground);
     margin-bottom: var(--space-sm);
     letter-spacing: -0.5px;
@@ -63,12 +63,13 @@
 
 .button {
     background-color: var(--green-primary);
-    color: #ffffff;
-    padding: 12px 32px;
+    color: var(--color-button-text);
+    padding: 0.75rem 2rem;
+    /* 12px 32px */
     border-radius: var(--radius-md);
     font-size: var(--font-sm);
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: var(--font-weight-semibold);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     box-shadow: 0 4px 12px rgba(12, 112, 40, 0.2);
 }
 

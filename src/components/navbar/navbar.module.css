@@ -18,7 +18,7 @@
     border-radius: var(--radius-full);
     box-shadow: none;
     gap: var(--space-xs);
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
 }
 
 [data-theme="dark"] .nav_pill {
@@ -41,7 +41,7 @@
     background-color: transparent;
     color: var(--foreground);
     opacity: 0.6;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity var(--theme-transition);
+    transition: transform var(--transition-normal), opacity var(--theme-transition);
 }
 
 .nav_btn:hover {
@@ -73,7 +73,7 @@
     padding: 0 var(--space-md);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all var(--transition-slow);
 }
 
 .toast_div.show {
@@ -84,11 +84,11 @@
 .toast_messages {
     width: fit-content;
     max-width: 90%;
-    padding: 12px var(--space-lg);
+    padding: var(--space-md-sm) var(--space-lg);
     margin: auto;
     text-align: center;
     font-size: var(--font-sm);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     letter-spacing: 0.5px;
     border-radius: var(--radius-full);
     background: var(--color-surface-elevated);

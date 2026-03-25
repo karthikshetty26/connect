@@ -35,7 +35,7 @@
 .bio_content h1 {
   font-size: var(--font-3xl);
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: var(--font-weight-extrabold);
   letter-spacing: -1px;
   color: var(--foreground);
 }
@@ -44,16 +44,17 @@
 .bio_content .bio {
   margin-top: var(--space-lg);
   font-size: var(--font-md);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1.6;
   color: var(--foreground-05);
-  max-width: 650px;
+  max-width: 40.625rem;
+  /* 650px */
 }
 
 /* Responsive styles for tablets and small desktops */
 @media only screen and (max-width: 800px) {
   .section_bio {
-    padding: var(--space-2xl) var(--space-md) 30px var(--space-md);
+    padding: var(--space-2xl) var(--space-md) 1.875rem var(--space-md);
   }
 
   .bio_content h1 {
@@ -63,7 +64,7 @@
 
   .bio_content .bio {
     font-size: var(--font-base);
-    margin-top: 18px;
+    margin-top: var(--space-md);
   }
 }
 
@@ -99,7 +100,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
+  gap: var(--space-lg);
 }
 
 /* Individual social link card */
@@ -120,7 +121,7 @@
   box-shadow: 0 4px 24px var(--color-shadow-sm);
   cursor: pointer;
   text-align: left;
-  transition: all 300ms ease-in-out;
+  transition: all var(--transition-normal);
 }
 
 .link:hover {
@@ -131,13 +132,13 @@
 /* Special dark green styling for Gmail card */
 .link_highlight {
   background-color: var(--green-highlight-bg) !important;
-  color: #ffffff;
+  color: var(--color-link-highlight-text);
   border: none;
 }
 
 .link_highlight .icon {
   background-color: var(--color-icon-highlight-bg);
-  color: #ffffff;
+  color: var(--color-link-highlight-text);
 }
 
 .link_highlight .icon svg {
@@ -147,7 +148,7 @@
 .link_highlight .title,
 .link_highlight .description,
 .link_highlight .link_text_container {
-  color: #ffffff !important;
+  color: var(--color-link-highlight-text) !important;
 }
 
 /* Dark mode card border & shadow */
@@ -158,7 +159,7 @@
 
 /* Force white icon background in dark mode for highlighted state */
 [data-theme="dark"] .link_highlight .icon {
-  background-color: #ffffff !important;
+  background-color: var(--color-link-highlight-text) !important;
 }
 
 [data-theme="dark"] .link_highlight .icon svg {
@@ -191,7 +192,7 @@
   right: var(--space-lg);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .decorative_grid div {
@@ -211,7 +212,7 @@
 
 .title {
   font-size: var(--font-md);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-sm);
   color: var(--foreground);
 }
@@ -229,18 +230,18 @@
   align-items: center;
   gap: var(--space-xs);
   font-size: var(--font-sm);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--green-primary);
   margin-top: auto;
-  transition: gap 0.2s ease;
+  transition: gap var(--transition-fast);
 }
 
 .arrow {
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-fast);
 }
 
 .link:hover .link_text_container {
-  gap: 10px;
+  gap: var(--space-sm);
 }
 
 /* Adjust grid to two columns on medium screens */
@@ -254,7 +255,7 @@
 @media only screen and (max-width: 600px) {
   .links {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: var(--space-md);
   }
 
   .link {
@@ -263,7 +264,7 @@
   }
 
   .description {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-md-sm);
   }
 }
 
@@ -282,5 +283,5 @@
 }
 
 .app_cc a {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
