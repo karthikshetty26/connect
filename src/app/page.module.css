@@ -47,14 +47,13 @@
   font-weight: var(--font-weight-medium);
   line-height: 1.6;
   color: var(--foreground-05);
-  max-width: 40.625rem;
-  /* 650px */
+  max-width: 800px;
 }
 
 /* Responsive styles for tablets and small desktops */
 @media only screen and (max-width: 800px) {
   .section_bio {
-    padding: var(--space-3xl) var(--space-lg) 1.875rem var(--space-lg);
+    padding: var(--space-3xl) var(--space-lg) var(--space-xl) var(--space-lg);
   }
 
   .bio_content h1 {
@@ -82,7 +81,7 @@
 /* Responsive styles for very small screens */
 @media only screen and (max-width: 320px) {
   .bio_content h1 {
-    font-size: 1.8rem;
+    font-size: var(--font-lg);
   }
 }
 
