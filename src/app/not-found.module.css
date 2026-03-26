@@ -65,17 +65,16 @@
     background-color: var(--green-primary);
     color: var(--color-button-text);
     padding: var(--space-md) var(--space-xl);
-    /* 12px 32px */
     border-radius: var(--radius-md);
     font-size: var(--font-sm);
     font-weight: var(--font-weight-semibold);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    box-shadow: 0 4px 12px rgba(12, 112, 40, 0.2);
+    box-shadow: 0 4px 12px var(--color-shadow-md);
 }
 
 .button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(12, 112, 40, 0.3);
+    box-shadow: 0 6px 16px var(--color-shadow-lg);
 }
 
 .button:active {

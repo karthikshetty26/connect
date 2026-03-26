@@ -22,9 +22,7 @@
 }
 
 [data-theme="dark"] .nav_pill {
-    background: var(--color-glass-bg);
     border: 1.5px solid var(--color-border);
-    box-shadow: none;
 }
 
 /* Nav Buttons */

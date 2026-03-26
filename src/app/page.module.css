@@ -150,11 +150,7 @@
   color: var(--color-link-highlight-text) !important;
 }
 
-/* Dark mode card border & shadow */
-[data-theme="dark"] .link {
-  border-color: var(--color-border);
-  box-shadow: 0 4px 24px var(--color-shadow-sm);
-}
+
 
 /* Force white icon background in dark mode for highlighted state */
 [data-theme="dark"] .link_highlight .icon {
@@ -378,7 +374,6 @@
   display: flex;
   align-items: center;
   padding: var(--space-xl);
-  background-color: var(--background);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   color: var(--foreground);
