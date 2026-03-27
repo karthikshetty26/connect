@@ -1,3 +1,26 @@
+const ANALYTICS_SCRIPT_SOURCES = [
+    "https://www.googletagmanager.com",
+];
+
+const ANALYTICS_CONNECT_SOURCES = [
+    "https://www.google-analytics.com",
+    "https://*.google-analytics.com",
+];
+
+const ANALYTICS_IMAGE_SOURCES = [
+    "https://www.google-analytics.com",
+    "https://*.google-analytics.com",
+];
+
+const CONTENT_SECURITY_POLICY = [
+    "default-src 'self'",
+    `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${ANALYTICS_SCRIPT_SOURCES.join(" ")}`,
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "font-src 'self' https://fonts.gstatic.com",
+    `img-src 'self' data: ${ANALYTICS_IMAGE_SOURCES.join(" ")}`,
+    `connect-src 'self' ${ANALYTICS_CONNECT_SOURCES.join(" ")}`,
+].join("; ");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     // Disable the "X-Powered-By: Next.js" header for security
@@ -11,9 +34,9 @@ const nextConfig = {
                 headers: [
                     {
                         key: 'Content-Security-Policy',
-                        // Minimal CSP to allow local scripts, styles, and images
-                        // Note: If you add more external assets (like scripts from other domains), update this accordingly
-                        value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+                        // Keep CSP strict while explicitly allowing approved analytics providers.
+                        // Add new providers to the ANALYTICS_*_SOURCES arrays above.
+                        value: CONTENT_SECURITY_POLICY
                     },
                     {
                         key: 'X-Frame-Options',
