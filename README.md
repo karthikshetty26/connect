@@ -36,7 +36,7 @@ Connect is a fully responsive, open-source link-sharing website built with **Nex
     Open [http://localhost:3000](http://localhost:3000) in your browser to see the site.
 
 4.  **Customize your links**
-    *   Modify the `links` array in `src/app/page.js` to update your links.
+    *   Modify the `links` array in `src/config/site.js` to update your links.
     *   Edit styles in `src/app/globals.css` and `src/app/page.module.css` to change the appearance.
 
 5.  **Build and Deploy**
