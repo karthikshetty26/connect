@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
     analyticsScript: `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`,
     sharingImage: "/images/sharing/connect-og-image.jpg",
   },
-  
+
   profile: {
     name: "Karthik Shetty",
     bio: "Developer and digital craftsman building minimalist experiences for the modern society. Exploring the intersection of design, code, and human interaction.",
@@ -19,25 +19,44 @@ export const SITE_CONFIG = {
 
   uiText: {
     appTitle: "Connect with Karthik Shetty",
-    appDescription:
-      "Find all my important links in one place! Connect with me through my portfolio, GitHub, LinkedIn, YouTube channels, and social media profiles.",
-    openGraphDescription:
-      "All my essential links in one place. Connect with me on various platforms and explore my work.",
+    appDescription: "Find all my important links in one place! Connect with me through my portfolio, GitHub, LinkedIn, YouTube channels, and social media profiles.",
+    openGraphDescription: "All my essential links in one place. Connect with me on various platforms and explore my work.",
     siteName: "Karthik Shetty | Connect",
     sharingImageAlt: "Karthik Shetty - Connect with Me",
-    keywords:
-      "Karthik Shetty, social links, connect with me, link-sharing, portfolio links, GitHub, LinkedIn, YouTube, web development, full stack developer, React, Next.js, Angular, Java, MySQL",
+    keywords: "Karthik Shetty, social links, connect with me, link-sharing, portfolio links, GitHub, LinkedIn, YouTube, web development, full stack developer, React, Next.js, Angular, Java, MySQL",
     copyToast: "Link copied! Connect with me anytime...",
     toggleThemeAriaLabel: "Toggle Theme",
     copyUrlAriaLabel: "Copy Page URL",
     sourceLabel: "Source",
   },
 
+  blogModal: {
+    heading: "Read Articles On",
+    ctaLabel: "Read Articles",
+    platforms: [
+      {
+        title: "Hashnode",
+        href: "https://hashnode.com/@Karthikshetty",
+      },
+      {
+        title: "Medium",
+        href: "https://medium.com/@Karthikshetty26",
+      },
+    ],
+  },
+
+  notFound: {
+    code: "404",
+    title: "Page not found",
+    message: "The page you are looking for might have been moved or doesn't exist.",
+    homeHref: "/",
+    homeLabel: "Return Home",
+  },
+
   twitter: {
     card: "summary_large_image",
     creator: "@karthikshettyyy",
-    description:
-      "Find all my important links in one place, including portfolio, GitHub, LinkedIn, and social media.",
+    description: "Find all my important links in one place, including portfolio, GitHub, LinkedIn, and social media.",
   },
 
   socialLinks: [

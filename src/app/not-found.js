@@ -1,21 +1,22 @@
 import ERROR from './not-found.module.css';
 import Link from 'next/link';
+import { SITE_CONFIG } from '@/config/site';
 
 export default function NotFound() {
     return (
         <main className={ERROR.main}>
             <section className={ERROR.error_section}>
                 {/* Large watermark 404 */}
-                <div className={ERROR.bg_404}>404</div>
+                <div className={ERROR.bg_404}>{SITE_CONFIG.notFound.code}</div>
 
                 {/* Content Overlay */}
                 <div className={ERROR.content}>
-                    <h1 className={ERROR.title}>Page not found</h1>
+                    <h1 className={ERROR.title}>{SITE_CONFIG.notFound.title}</h1>
                     <p className={ERROR.message}>
-                        The page you are looking for might have been moved or doesn&apos;t exist.
+                        {SITE_CONFIG.notFound.message}
                     </p>
-                    <Link href="/" className={ERROR.button}>
-                        Return Home
+                    <Link href={SITE_CONFIG.notFound.homeHref} className={ERROR.button}>
+                        {SITE_CONFIG.notFound.homeLabel}
                     </Link>
                 </div>
             </section>
