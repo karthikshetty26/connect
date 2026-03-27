@@ -7,22 +7,22 @@ export const SITE_CONFIG = {
     analyticsScript: `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`,
     sharingImage: "/images/sharing/connect-og-image.jpg",
   },
+  
   profile: {
     name: "Karthik Shetty",
     bio: "Developer and digital craftsman building minimalist experiences for the modern society. Exploring the intersection of design, code, and human interaction.",
-    creatorHandle: "@karthikshettyyy",
   },
+
   analytics: {
     id: ANALYTICS_ID,
   },
+
   uiText: {
     appTitle: "Connect with Karthik Shetty",
     appDescription:
       "Find all my important links in one place! Connect with me through my portfolio, GitHub, LinkedIn, YouTube channels, and social media profiles.",
     openGraphDescription:
       "All my essential links in one place. Connect with me on various platforms and explore my work.",
-    twitterDescription:
-      "Find all my important links in one place, including portfolio, GitHub, LinkedIn, and social media.",
     siteName: "Karthik Shetty | Connect",
     sharingImageAlt: "Karthik Shetty - Connect with Me",
     keywords:
@@ -32,6 +32,14 @@ export const SITE_CONFIG = {
     copyUrlAriaLabel: "Copy Page URL",
     sourceLabel: "Source",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    creator: "@karthikshettyyy",
+    description:
+      "Find all my important links in one place, including portfolio, GitHub, LinkedIn, and social media.",
+  },
+
   socialLinks: [
     {
       href: "https://karthikshetty.info/",

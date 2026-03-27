@@ -44,10 +44,10 @@ export const metadata = {
 
   // Twitter card metadata for optimized Twitter sharing
   twitter: {
-    card: "summary_large_image",
+    card: SITE_CONFIG.twitter.card,
     title: SITE_CONFIG.uiText.appTitle,
-    description: SITE_CONFIG.uiText.twitterDescription,
-    creator: SITE_CONFIG.profile.creatorHandle,
+    description: SITE_CONFIG.twitter.description,
+    creator: SITE_CONFIG.twitter.creator,
     images: [SITE_CONFIG.urls.sharingImage]
   },
 
