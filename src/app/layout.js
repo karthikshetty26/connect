@@ -66,7 +66,7 @@ export const metadata = {
 // Root layout component that wraps all pages
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
