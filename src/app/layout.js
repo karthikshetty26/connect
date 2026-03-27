@@ -2,16 +2,22 @@ import "./globals.css";
 // Import the custom Navbar component
 import NavbarUi from '@/components/navbar/navbar'
 import Script from "next/script";
-// Import Poppins font from Google Fonts using Next.js font optimization
-import { Poppins } from "next/font/google"
+// Premium Minimal Editorial typography: Plus Jakarta Sans (display) + Inter (body)
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { SITE_CONFIG } from "@/config/site";
 
-// Configure Poppins font with all available weights 
-// and create a CSS variable that can be used throughout the app
-const poppinsSans = Poppins({
+// Expressive display font (names, key headlines)
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-primary",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
+});
+
+// Functional readability (body, labels, descriptions)
+const interSans = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-body",
 });
 
 // Define site metadata for SEO and social sharing
@@ -83,7 +89,7 @@ export default function RootLayout({ children }) {
         gtag('config', '${SITE_CONFIG.analytics.id}');
         `}</Script>
       </head>
-      <body className={poppinsSans.variable}>
+      <body className={`${plusJakarta.variable} ${interSans.variable}`}>
         {/* Include the navigation bar on all pages */}
         <NavbarUi />
         {/* Render the page content */}

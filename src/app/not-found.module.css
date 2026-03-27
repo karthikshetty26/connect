@@ -50,7 +50,8 @@
     font-weight: var(--font-weight-extrabold);
     color: var(--foreground);
     margin-bottom: var(--space-sm);
-    letter-spacing: -0.5px;
+    letter-spacing: -0.02em;
+    font-family: var(--font-display);
 }
 
 .message {
@@ -58,7 +59,8 @@
     color: var(--foreground-05);
     max-width: 350px;
     line-height: 1.5;
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-xl);
+    font-family: var(--font-body);
 }
 
 .button {

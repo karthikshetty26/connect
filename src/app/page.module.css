@@ -33,21 +33,23 @@
 
 /* Bold name heading styling */
 .bio_content h1 {
-  font-size: var(--font-3xl);
+  font-size: var(--font-4xl);
   line-height: 1.1;
-  font-weight: var(--font-weight-extrabold);
-  letter-spacing: -1px;
+  font-weight: var(--font-weight-extrabold); /* 800 */
+  letter-spacing: -0.02em;
   color: var(--foreground);
+  font-family: var(--font-display);
 }
 
 /* Minimalistic bio description text */
 .bio_content .bio {
-  margin-top: var(--space-xl);
-  font-size: var(--font-md);
-  font-weight: var(--font-weight-medium);
+  margin-top: var(--space-lg);
+  font-size: var(--font-base); /* body-md 1.00rem */
+  font-weight: var(--font-weight-regular); /* 400 */
   line-height: 1.6;
   color: var(--foreground-05);
   max-width: 800px;
+  font-family: var(--font-body);
 }
 
 /* Responsive styles for tablets and small desktops */
@@ -58,7 +60,7 @@
 
   .bio_content h1 {
     font-size: var(--font-2xl);
-    letter-spacing: -1px;
+    letter-spacing: -0.02em;
   }
 
   .bio_content .bio {
