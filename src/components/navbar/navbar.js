@@ -1,6 +1,7 @@
 "use client"
 import NAVCSS from './navbar.module.css';
 import { useEffect, useState } from 'react';
+import { SITE_CONFIG } from '@/config/site';
 
 // Optimized SVGs for theme and actions
 const ICONS = {
@@ -24,7 +25,7 @@ const ICONS = {
 export default function NavbarUi() {
     const [theme, setTheme] = useState('dark');
     const [copySuccess, setCopySuccess] = useState(false);
-    const toastMessage = "Link copied! Connect with me anytime...";
+    const toastMessage = SITE_CONFIG.uiText.copyToast;
 
     // Toggle theme and update attribute/local storage
     const toggleTheme = () => {
@@ -73,7 +74,7 @@ export default function NavbarUi() {
                 <button
                     className={NAVCSS.nav_btn}
                     onClick={toggleTheme}
-                    aria-label="Toggle Theme"
+                    aria-label={SITE_CONFIG.uiText.toggleThemeAriaLabel}
                 >
                     {theme === 'light' ? ICONS.moon : ICONS.sun}
                 </button>
@@ -83,7 +84,7 @@ export default function NavbarUi() {
                 <button
                     className={NAVCSS.nav_btn}
                     onClick={copyToClipboard}
-                    aria-label="Copy Page URL"
+                    aria-label={SITE_CONFIG.uiText.copyUrlAriaLabel}
                 >
                     {ICONS.copy}
                 </button>

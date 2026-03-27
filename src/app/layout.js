@@ -4,6 +4,7 @@ import NavbarUi from '@/components/navbar/navbar'
 import Script from "next/script";
 // Import Poppins font from Google Fonts using Next.js font optimization
 import { Poppins } from "next/font/google"
+import { SITE_CONFIG } from "@/config/site";
 
 // Configure Poppins font with all available weights 
 // and create a CSS variable that can be used throughout the app
@@ -16,27 +17,27 @@ const poppinsSans = Poppins({
 // Define site metadata for SEO and social sharing
 export const metadata = {
   // Base URL for the site - used for constructing absolute URLs
-  metadataBase: new URL('https://connect.karthikshetty.info'),
+  metadataBase: new URL(SITE_CONFIG.urls.base),
 
   // Basic SEO metadata
-  title: "Connect with Karthik Shetty",
-  description: "Find all my important links in one place! Connect with me through my portfolio, GitHub, LinkedIn, YouTube channels, and social media profiles.",
-  keywords: "Karthik Shetty, social links, connect with me, link-sharing, portfolio links, GitHub, LinkedIn, YouTube, web development, full stack developer, React, Next.js, Angular, Java, MySQL",
+  title: SITE_CONFIG.uiText.appTitle,
+  description: SITE_CONFIG.uiText.appDescription,
+  keywords: SITE_CONFIG.uiText.keywords,
 
   // Open Graph metadata for rich sharing experiences on Facebook, LinkedIn, etc.
   openGraph: {
-    title: "Connect with Karthik Shetty",
-    description: "All my essential links in one place. Connect with me on various platforms and explore my work.",
+    title: SITE_CONFIG.uiText.appTitle,
+    description: SITE_CONFIG.uiText.openGraphDescription,
     type: "website",
     locale: "en_US",
-    url: "https://connect.karthikshetty.info",
-    siteName: "Karthik Shetty | Connect",
+    url: SITE_CONFIG.urls.base,
+    siteName: SITE_CONFIG.uiText.siteName,
     images: [
       {
-        url: "/images/sharing/connect-og-image.jpg",
+        url: SITE_CONFIG.urls.sharingImage,
         width: 1200,
         height: 630,
-        alt: "Karthik Shetty - Connect with Me"
+        alt: SITE_CONFIG.uiText.sharingImageAlt
       }
     ]
   },
@@ -44,10 +45,10 @@ export const metadata = {
   // Twitter card metadata for optimized Twitter sharing
   twitter: {
     card: "summary_large_image",
-    title: "Connect with Karthik Shetty",
-    description: "Find all my important links in one place, including portfolio, GitHub, LinkedIn, and social media.",
-    creator: "@karthikshettyyy",
-    images: ["/images/sharing/connect-og-image.jpg"]
+    title: SITE_CONFIG.uiText.appTitle,
+    description: SITE_CONFIG.uiText.twitterDescription,
+    creator: SITE_CONFIG.profile.creatorHandle,
+    images: [SITE_CONFIG.urls.sharingImage]
   },
 
   // Robots directives for search engine crawlers
@@ -58,7 +59,7 @@ export const metadata = {
 
   // Specify the canonical URL to prevent duplicate content issues
   alternates: {
-    canonical: "https://connect.karthikshetty.info"
+    canonical: SITE_CONFIG.urls.base
   }
 };
 
@@ -68,13 +69,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Google Analytics script */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-SHQCDTWEW3" />
+        <Script async src={SITE_CONFIG.urls.analyticsScript} />
         <Script id='google-analytics' strategy='afterInteractive'>{`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
       
-        gtag('config', 'G-SHQCDTWEW3');
+        gtag('config', '${SITE_CONFIG.analytics.id}');
         `}</Script>
       </head>
       <body className={poppinsSans.variable}>
