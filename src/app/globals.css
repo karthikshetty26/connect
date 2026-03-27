@@ -170,13 +170,6 @@
    box-sizing: border-box;
    padding: 0;
    margin: 0;
-   /* Universal theme transition — all color/background changes animate together */
-   transition:
-      color var(--theme-transition),
-      background-color var(--theme-transition),
-      border-color var(--theme-transition),
-      box-shadow var(--theme-transition),
-      opacity var(--theme-transition);
 }
 
 html,
@@ -186,6 +179,46 @@ body {
    font-family: var(--font-primary);
    color: var(--foreground);
    background-color: var(--background);
+}
+
+/* Scoped theme-transition targets (avoids universal selector cost) */
+:where(
+  body,
+  main,
+  section,
+  article,
+  header,
+  footer,
+  nav,
+  div,
+  span,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  small,
+  strong,
+  em,
+  ul,
+  ol,
+  li,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  svg,
+  path
+) {
+   transition:
+      color var(--theme-transition),
+      background-color var(--theme-transition),
+      border-color var(--theme-transition),
+      box-shadow var(--theme-transition),
+      opacity var(--theme-transition);
 }
 
 a {
