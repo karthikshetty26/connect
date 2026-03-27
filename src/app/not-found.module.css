@@ -1,5 +1,3 @@
-@value bp-sm from "../styles/breakpoints.module.css";
-
 .main {
     width: 100%;
     height: 100dvh;
@@ -84,7 +82,7 @@
 }
 
 /* Responsive adjustments */
-@media screen and bp-sm {
+@media screen and (max-width: 600px) {
     .bg_404 {
         font-size: var(--font-hero);
     }

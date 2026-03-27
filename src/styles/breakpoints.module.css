@@ -1,5 +1,0 @@
-/* Shared responsive breakpoint tokens for CSS Modules */
-@value bp-xs: (max-width: 320px);
-@value bp-sm: (max-width: 600px);
-@value bp-md: (max-width: 800px);
-@value bp-lg: (max-width: 1000px);
