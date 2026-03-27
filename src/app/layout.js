@@ -68,6 +68,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();",
+          }}
+        />
         {/* Google Analytics script */}
         <Script async src={SITE_CONFIG.urls.analyticsScript} />
         <Script id='google-analytics' strategy='afterInteractive'>{`
