@@ -1,15 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import HOMECSS from "./page.module.css";
 import { SITE_CONFIG } from "@/config/site";
 
 export default function BlogModalClient({ name, type, description, linkText }) {
   const [isBlogModalOpen, setIsBlogModalOpen] = useState(false);
+  const triggerButtonRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const modalTitleId = useId();
+
+  const closeModal = () => {
+    setIsBlogModalOpen(false);
+    triggerButtonRef.current?.focus();
+  };
+
+  useEffect(() => {
+    if (!isBlogModalOpen) {
+      return undefined;
+    }
+
+    closeButtonRef.current?.focus();
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [isBlogModalOpen]);
 
   return (
     <>
       <button
+        ref={triggerButtonRef}
         type="button"
         className={`${HOMECSS.link} ${HOMECSS.link_button}`}
         onClick={() => setIsBlogModalOpen(true)}
@@ -37,11 +63,23 @@ export default function BlogModalClient({ name, type, description, linkText }) {
       </button>
 
       {isBlogModalOpen && (
-        <div className={HOMECSS.modal_overlay} onClick={() => setIsBlogModalOpen(false)}>
-          <div className={HOMECSS.modal_content} onClick={(e) => e.stopPropagation()}>
+        <div className={HOMECSS.modal_overlay} onClick={closeModal}>
+          <div
+            className={HOMECSS.modal_content}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={modalTitleId}
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className={HOMECSS.modal_header}>
-              <h3>{SITE_CONFIG.blogModal.heading}</h3>
-              <button className={HOMECSS.close_button} onClick={() => setIsBlogModalOpen(false)}>
+              <h3 id={modalTitleId}>{SITE_CONFIG.blogModal.heading}</h3>
+              <button
+                ref={closeButtonRef}
+                type="button"
+                className={HOMECSS.close_button}
+                onClick={closeModal}
+                aria-label="Close modal"
+              >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
