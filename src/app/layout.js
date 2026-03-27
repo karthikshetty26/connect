@@ -2,6 +2,8 @@ import "./globals.css";
 // Import the custom Navbar component
 import NavbarUi from '@/components/navbar/navbar'
 import Script from "next/script";
+import Footer from "@/components/footer/Footer";
+import LAYOUT_CSS from "./layout.module.css";
 // Premium Minimal Editorial typography: Plus Jakarta Sans (display) + Inter (body)
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { SITE_CONFIG } from "@/config/site";
@@ -90,10 +92,15 @@ export default function RootLayout({ children }) {
         `}</Script>
       </head>
       <body className={`${plusJakarta.variable} ${interSans.variable}`}>
-        {/* Include the navigation bar on all pages */}
-        <NavbarUi />
-        {/* Render the page content */}
-        {children}
+        <div className={LAYOUT_CSS.shell}>
+          {/* Include the navigation bar on all pages */}
+          <NavbarUi />
+
+          {/* Render the page content */}
+          <div className={LAYOUT_CSS.content}>{children}</div>
+
+          <Footer />
+        </div>
       </body>
     </html>
   );

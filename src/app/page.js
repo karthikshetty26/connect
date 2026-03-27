@@ -47,14 +47,6 @@ export default function Home() {
           );
         })}
       </section>
-
-      {/* Copyright footer - positioned at the bottom via CSS */}
-      <div className={HOMECSS.app_cc}>
-        ©&nbsp;{new Date().getFullYear()}&nbsp;{SITE_CONFIG.profile.name} |{" "}
-        <a href={SITE_CONFIG.urls.source} target="_blank" rel="noopener noreferrer">
-          {SITE_CONFIG.uiText.sourceLabel}
-        </a>
-      </div>
     </main >
   );
 }

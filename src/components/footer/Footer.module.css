@@ -1,0 +1,15 @@
+.app_cc {
+  width: 100%;
+  display: block;
+  font-size: var(--font-xs);
+  text-align: center;
+  opacity: 0.3;
+  color: var(--foreground);
+  cursor: default;
+  padding: var(--space-2xl) 0;
+}
+
+.app_cc a {
+  font-weight: var(--font-weight-semibold);
+}
+
