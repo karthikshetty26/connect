@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* Copyright footer - positioned at the bottom via CSS */}
       <div className={HOMECSS.app_cc}>
-        ©&nbsp;2026&nbsp;{SITE_CONFIG.profile.name} |{" "}
+        ©&nbsp;{new Date().getFullYear()}&nbsp;{SITE_CONFIG.profile.name} |{" "}
         <a href={SITE_CONFIG.urls.source} target="_blank" rel="noopener noreferrer">
           {SITE_CONFIG.uiText.sourceLabel}
         </a>
