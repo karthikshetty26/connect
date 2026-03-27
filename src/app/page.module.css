@@ -130,7 +130,20 @@
     color var(--transition-normal);
 }
 
+/* Reset native button styles while preserving card visuals */
+.link_button {
+  width: 100%;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 .link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--color-shadow-md);
+}
+
+.link:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px var(--color-shadow-md);
 }
