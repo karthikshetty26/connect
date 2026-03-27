@@ -1,8 +1,8 @@
-# Connect: Your Personal Static Link-in-Bio Website
+# Connect: Your Personal Link-in-Bio Website
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-Connect is a fully responsive, open-source, and static link-sharing website built with **Next.js**. It's the perfect solution for creating a "link-in-bio" page for your social media profiles, a simple portfolio, or a single page to share all your important links. Because it's a static site, it's incredibly fast, secure, and easy to deploy.
+Connect is a fully responsive, open-source link-sharing website built with **Next.js**. It's designed for creating a "link-in-bio" page, a simple portfolio, or a single page to share important links.
 
 **Live Demo:** [connect.karthikshetty.info](https://connect.karthikshetty.info)
 
@@ -12,10 +12,10 @@ Connect is a fully responsive, open-source, and static link-sharing website buil
 
 - 🚀 **Fast & Optimized**: Built with Next.js for a lightning-fast user experience.
 - 📱 **Responsive Design**: Looks great on all devices, from desktops to mobile phones.
-- 🌐 **Fully Static & Serverless**: No backend required. Deploy it anywhere with ease.
-- 🔒 **Privacy-Focused**: All your data stays on the client-side. No tracking or third-party services.
+- 🌐 **Simple Architecture**: No custom backend logic required.
+- 📊 **Analytics Enabled**: Includes Google Analytics tracking via gtag.
 - 🎨 **Easily Customizable**: Quickly change links, themes, and styles to match your personal brand.
-- ☁️ **Deploy Anywhere**: Ready to deploy on Vercel, Netlify, GitHub Pages, and other static hosting platforms.
+- ☁️ **Deploy on Next.js-Compatible Hosts**: Ready for platforms like Vercel and other hosts that support Next.js runtime output.
 
 ## 🚀 How to Use
 
@@ -43,7 +43,11 @@ Connect is a fully responsive, open-source, and static link-sharing website buil
     ```bash
     npm run build
     ```
-    Deploy the `out` folder to any static hosting service like **Vercel**, **Netlify**, or **GitHub Pages**.
+    Start production locally:
+    ```bash
+    npm run start
+    ```
+    Deploy using a Next.js-compatible platform (for example, **Vercel**). This project is not configured for static export (`output: 'export'` is not set).
 
 ## 🤝 Contribution
 
