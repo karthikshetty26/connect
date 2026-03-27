@@ -135,7 +135,7 @@
 
 /* Special dark green styling for Gmail card */
 .link_highlight {
-  background-color: var(--green-highlight-bg) !important;
+  background-color: var(--green-highlight-bg);
   color: var(--color-link-highlight-text);
   border: none;
 }
@@ -146,28 +146,28 @@
 }
 
 .link_highlight .icon svg {
-  color: var(--green-highlight-bg) !important;
+  color: var(--green-highlight-bg);
 }
 
 .link_highlight .title,
 .link_highlight .description,
 .link_highlight .link_text_container {
-  color: var(--color-link-highlight-text) !important;
+  color: var(--color-link-highlight-text);
 }
 
 
 
 /* Force white icon background in dark mode for highlighted state */
 [data-theme="dark"] .link_highlight .icon {
-  background-color: var(--color-link-highlight-text) !important;
+  background-color: var(--color-link-highlight-text);
 }
 
 [data-theme="dark"] .link_highlight .icon svg {
-  color: var(--green-primary) !important;
+  color: var(--green-primary);
 }
 
 /* Icon container */
-.link div.icon {
+.link .icon {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-md);
@@ -179,7 +179,7 @@
   margin-bottom: var(--space-lg);
 }
 
-.link div.icon svg {
+.link .icon svg {
   width: 22px;
   height: 22px;
   fill: currentColor;
