@@ -1,3 +1,5 @@
+@value bp-xs, bp-sm, bp-md from "../styles/breakpoints.module.css";
+
 /* Main container for the entire page */
 .main {
   position: relative;
@@ -51,7 +53,7 @@
 }
 
 /* Responsive styles for tablets and small desktops */
-@media only screen and (max-width: 800px) {
+@media only screen and bp-md {
   .section_bio {
     padding: var(--space-3xl) var(--space-lg) var(--space-xl) var(--space-lg);
   }
@@ -68,7 +70,7 @@
 }
 
 /* Responsive styles for mobile devices */
-@media only screen and (max-width: 600px) {
+@media only screen and bp-sm {
   .section_bio {
     padding: var(--space-3xl) var(--space-lg) var(--space-lg) var(--space-lg);
   }
@@ -79,7 +81,7 @@
 }
 
 /* Responsive styles for very small screens */
-@media only screen and (max-width: 320px) {
+@media only screen and bp-xs {
   .bio_content h1 {
     font-size: var(--font-lg);
   }
@@ -245,14 +247,14 @@
 }
 
 /* Adjust grid to two columns on medium screens */
-@media only screen and (max-width: 800px) {
+@media only screen and bp-md {
   .links {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 /* Single column layout for mobile devices */
-@media only screen and (max-width: 600px) {
+@media only screen and bp-sm {
   .links {
     grid-template-columns: 1fr;
     gap: var(--space-lg);

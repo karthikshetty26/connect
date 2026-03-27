@@ -1,3 +1,5 @@
+@value bp-sm from "../../styles/breakpoints.module.css";
+
 /* NAVBAR COMPONENT STYLES */
 .nav {
     position: fixed;
@@ -105,7 +107,7 @@
 }
 
 /* Mobile Adjustments */
-@media screen and (max-width: 600px) {
+@media screen and bp-sm {
     .nav {
         right: var(--space-lg);
         top: var(--space-lg);
