@@ -82,6 +82,13 @@ export const SITE_CONFIG = {
       linkText: "View Code",
     },
     {
+      href: "https://x.com/KarthikShettyyy",
+      name: "Twitter / X",
+      type: "X",
+      description: "Short-form thoughts and real-time updates.",
+      linkText: "Follow",
+    },
+    {
       isModal: true,
       name: "Read Articles",
       type: "Blog",
