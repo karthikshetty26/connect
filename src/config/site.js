@@ -64,14 +64,21 @@ export const SITE_CONFIG = {
       href: "https://karthikshetty.info/",
       name: "Portfolio",
       type: "Website",
-      description: "Real projects I’ve built - not just ideas.",
+      description: "A closer look at the work I’ve built and how I approach it.",
       linkText: "View Projects",
+    },
+    {
+      href: "https://karthikshetty.info/services",
+      name: "Services",
+      type: "Service",
+      description: "Helping you build things that actually work.",
+      linkText: "Learn More",
     },
     {
       href: "https://www.linkedin.com/in/karthikshetty26/",
       name: "LinkedIn",
       type: "LinkedIn",
-      description: "Where I share what I’m building and learning in real-time.",
+      description: "Where I share what I'm building and learning in real-time.",
       linkText: "Connect",
     },
     {

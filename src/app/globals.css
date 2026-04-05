@@ -58,22 +58,29 @@
    /* Solid surface alias (toast background, elevated cards) */
    --color-surface-elevated: #ffffff;
 
-  /* --------------------------------------------------------------------------
+   /* --------------------------------------------------------------------------
      Typography
      Plus Jakarta Sans (display) + Inter (body)
   -------------------------------------------------------------------------- */
-  /* Core scales */
-  --font-xs: 0.80rem;   /* fine print          */
-  --font-sm: 0.875rem;  /* body-md / labels    */
-  --font-base: 1.00rem; /* standard body       */
-  --font-md: 1.15rem;   /* supporting headings */
-  --font-lg: 1.50rem;   /* headline-sm         */
-  --font-xl: 2.20rem;
-  --font-2xl: 2.80rem;
-  --font-3xl: 3.50rem;  /* display-lg          */
-  --font-4xl: 4.50rem;  /* display-xl          */
-  --font-hero: 10rem;
-  --font-2hero: 15rem;
+   /* Core scales */
+   --font-xs: 0.80rem;
+   /* fine print          */
+   --font-sm: 0.875rem;
+   /* body-md / labels    */
+   --font-base: 1.00rem;
+   /* standard body       */
+   --font-md: 1.15rem;
+   /* supporting headings */
+   --font-lg: 1.50rem;
+   /* headline-sm         */
+   --font-xl: 2.20rem;
+   --font-2xl: 2.80rem;
+   --font-3xl: 3.50rem;
+   /* display-lg          */
+   --font-4xl: 4.50rem;
+   /* display-xl          */
+   --font-hero: 10rem;
+   --font-2hero: 15rem;
 
    /* Font Weights */
    --font-weight-regular: 400;
@@ -167,44 +174,42 @@ html,
 body {
    max-width: 100vw;
    overflow-x: hidden;
-  /* Inter is the base body font; display font is applied where needed */
-  font-family: var(--font-body, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+   /* Inter is the base body font; display font is applied where needed */
+   font-family: var(--font-body, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
    color: var(--foreground);
    background-color: var(--background);
 }
 
 /* Scoped theme-transition targets (avoids universal selector cost) */
-:where(
-  body,
-  main,
-  section,
-  article,
-  header,
-  footer,
-  nav,
-  div,
-  span,
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  small,
-  strong,
-  em,
-  ul,
-  ol,
-  li,
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  svg,
-  path
-) {
+:where(body,
+   main,
+   section,
+   article,
+   header,
+   footer,
+   nav,
+   div,
+   span,
+   p,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   small,
+   strong,
+   em,
+   ul,
+   ol,
+   li,
+   a,
+   button,
+   input,
+   textarea,
+   select,
+   svg,
+   path) {
    transition:
       color var(--theme-transition),
       background-color var(--theme-transition),
