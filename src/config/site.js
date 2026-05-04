@@ -1,4 +1,4 @@
-const ANALYTICS_ID = process.env.NEXT_PUBLIC_GA_ID || "G-SHQCDTWEW3";
+const ANALYTICS_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const SITE_CONFIG = {
   urls: {
@@ -117,7 +117,7 @@ export const SITE_CONFIG = {
       linkText: "Follow",
     },
     {
-      href: "mailto:karthikkanyana26@gmail.com",
+      href: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`,
       name: "Gmail",
       type: "Mail",
       description: "Inquiries and collaboration requests.",
